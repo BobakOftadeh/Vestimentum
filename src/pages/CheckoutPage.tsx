@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ShopContext } from "../../context/shopContext";
+import { ShopContext } from "../context/shopContext";
 
 type image = {
   src: string;
@@ -19,7 +19,7 @@ interface checkout {
   variant: variant;
 }
 
-const Cart = () => {
+const CheckoutPage = () => {
   const { isCartOpen, closeCart, checkout } = useContext(ShopContext);
 
   return (
@@ -38,11 +38,11 @@ const Cart = () => {
             <div>{item.variant.price}</div>
           </div>
         ))}
-      <a href={checkout.weburl} target="_blank" rel="noopener noreferrer">
-        Checkout
+      <a href={checkout.webUrl} target="_blank" rel="noopener noreferrer">
+        Checkout2
       </a>
     </div>
   );
 };
 
-export default Cart;
+export default CheckoutPage;

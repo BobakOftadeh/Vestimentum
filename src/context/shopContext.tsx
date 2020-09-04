@@ -52,7 +52,7 @@ class shopProvider extends Component {
     this.setState({ checkout: checkout });
   };
 
-  addItemtoCheckout = async (variantId: number, quantity: string) => {
+  addItemToCheckout = async (variantId: number, quantity: string) => {
     const lineItemsToAdd = [
       {
         variantId,
@@ -95,7 +95,7 @@ class shopProvider extends Component {
           fetchProductWithId: this.fetchProductWithId,
           closeCart: this.closeCart,
           openCart: this.openCart,
-          addItemtoCheckout: this.addItemtoCheckout,
+          addItemToCheckout: this.addItemToCheckout,
         }}
       >
         {this.props.children}
