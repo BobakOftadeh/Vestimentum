@@ -3,10 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import NavBar from "./components/NavBar";
 import ShopProvider from "./context/shopContext";
-import Cart from "./components/Cart";
-import Footer from "./components/Footer";
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -64,34 +61,23 @@ h1 {
   }
 `;
 
-const AppContainer = styled.div`
-  display: grid;
-  grid-template-columns:
-    [full-start] 1fr [center-start] repeat(8, minmax(min-content, 13rem))
-    [center-end] 1fr [full-end];
-`;
-
 function App() {
   return (
     <ShopProvider>
-      <AppContainer className="App">
-        <GlobalStyle />
-        <Router>
-          <NavBar />
-          <Switch>
-            <Route path="/product/:id">
-              <ProductPage />
-            </Route>
-            <Route path="/checkout">
-              <CheckoutPage />
-            </Route>
-            <Route path="/">
-              <HomePage />
-            </Route>
-          </Switch>
-          <Footer />
-        </Router>
-      </AppContainer>
+      <GlobalStyle />
+      <Router>
+        <Switch>
+          <Route path="/product/:id">
+            <ProductPage />
+          </Route>
+          <Route path="/checkout">
+            <CheckoutPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
     </ShopProvider>
   );
 }
