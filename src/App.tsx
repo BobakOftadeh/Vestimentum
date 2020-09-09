@@ -9,8 +9,14 @@ import styled, { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 :root {
   --font-size: 100%; /* 16px */
-  --ratio: 1.333;
-
+  --ratio: 1.5;
+  --ratio-alt: 1.333;
+  --ratio-alt-2: 1.155;
+  --color-primary: f#add2c9;
+  --color-white: #faf9f9;
+  --color-pale: #5ea3a3;
+  --color-pale-light: #488b8f;
+  
 /* Calculate values */
   --h4: calc(var(--font-size) * var(--ratio));
   --h3: calc(var(--h4) * var(--ratio));
@@ -27,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
   
   html {
     font-size: 1rem;
-    font-family: "Lato";
+    font-family: "Open Sans", sans-serif;
     text-rendering: optimizeLegibility;
   }
   body {
@@ -53,12 +59,31 @@ h2 {
 h1 {
   font-size: var(--h1);
 }
+
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+  word-break: break-word;
+
+  hyphens: auto;
+}
   
-  @media only screen and (min-width: 405px) {
-    html {
-      font-size: 80%;
-    }
+  @media only screen and (max-width: 900px) {
+  :root {
+    --ratio: var(--ratio-alt);
   }
+}
+
+
+@media only screen and (max-width: 400px) {
+  :root {
+    --ratio: var(--ratio-alt-2);
+  }
+}
+  
 `;
 
 function App() {

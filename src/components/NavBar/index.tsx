@@ -4,6 +4,7 @@ import { ShopContext } from "../../context/shopContext";
 import styled from "styled-components";
 
 const StyledNavBar = styled.nav`
+  height: 7vh;
   grid-column: full-start/full-end;
 `;
 

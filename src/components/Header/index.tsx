@@ -1,12 +1,73 @@
 import React from "react";
 import styled from "styled-components";
+import HeroBg from "../../images/HeroBg.jpg";
 
 const StyledHeader = styled.header`
   grid-column: full-start/full-end;
+  color: var(--color-white);
+  grid-row-gap: 0.5rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  background-image: linear-gradient(
+      rgba(68, 82, 79, 0.7),
+      rgba(68, 82, 79, 0.7)
+    ),
+    url(${HeroBg});
+  background-size: cover;
+  height: 75vh;
+`;
+
+const ButtonStyle = styled.a`
+  text-transform: uppercase;
+  background-color: var(--color-pale);
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    &::after {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &::after {
+    content: "";
+    background-color: var(--color-pale);
+    position: absolute;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const Header = () => {
-  return <StyledHeader>Header</StyledHeader>;
+  return (
+    <StyledHeader>
+      <h1>The Sports Store</h1>
+      <h2>Buy the latest and greatest shirts</h2>
+      <ButtonStyle>Shop Now</ButtonStyle>
+    </StyledHeader>
+  );
 };
 
 export default Header;
