@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import { ShopContext } from "../../context/shopContext";
 import { Link } from "react-router-dom";
+import Card from "../Card";
 
 type image = {
   src: string;
@@ -18,8 +19,13 @@ interface product {
   variants: variant[];
 }
 
-const StyledHeader = styled.section`
+const StyledStore = styled.section`
   grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  grid-gap: 2rem;
+  place-items: center;
+  padding: 2rem;
 `;
 
 const Store = () => {
@@ -33,19 +39,16 @@ const Store = () => {
   if (!products) return <div>loading</div>;
 
   return (
-    <StyledHeader>
+    <StyledStore>
       {products.map((product: product) => (
-        <div key={product.id}>
-          <Link to={`/product/${product.id}`}>
-            <div>
-              <img src={product.images[0].src} alt="" width="42" height="42" />
-            </div>
-            <span>{product.title}</span>
-            <div>{product.variants[0].price}</div>
-          </Link>
-        </div>
+        <Card
+          id={product.id}
+          image={product.images[0].src}
+          name={product.title}
+          price={product.variants[0].price}
+        />
       ))}
-    </StyledHeader>
+    </StyledStore>
   );
 };
 

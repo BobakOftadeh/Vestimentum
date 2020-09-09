@@ -23,6 +23,7 @@ const HighlightItem = styled.div`
   height: 18rem;
   background-color: rgba(72, 139, 143, 0.7);
   transition: all 0.3s;
+  backface-visibility: hidden;
 
   & > *:not(:last-child) {
     margin-bottom: .5rem;

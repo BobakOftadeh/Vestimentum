@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
+import styled from "styled-components";
 
 type image = {
   src: string;
@@ -22,8 +23,13 @@ interface checkout {
 const Cart = () => {
   const { isCartOpen, closeCart, checkout } = useContext(ShopContext);
 
+  if (!checkout) {
+    return <div>loading</div>;
+  }
+
   return (
     <div>
+      {console.log(checkout)}
       {checkout.lineItems &&
         checkout.lineItems.map((item: checkout) => (
           <div key={item.id}>

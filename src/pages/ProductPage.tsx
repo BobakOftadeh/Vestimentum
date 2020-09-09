@@ -13,13 +13,10 @@ const ProductPage = () => {
     return () => {};
   }, [fetchProductWithId, id]);
 
-  console.log(useParams());
-
   if (!product.title) {
     return <div>loading</div>;
   }
 
-  console.log(product);
   return (
     <div>
       <div>
@@ -27,7 +24,6 @@ const ProductPage = () => {
       </div>
       <div>{product.title}</div>
       <div>${product.variants[0].price}</div>
-      {console.log(product.variants[0].id)}
       <button
         onClick={() => {
           addItemToCheckout(product.variants[0].id, "1");
