@@ -11,8 +11,8 @@ const StyledHeader = styled.header`
   place-content: center;
   place-items: center;
   background-image: linear-gradient(
-      rgba(68, 82, 79, 0.7),
-      rgba(68, 82, 79, 0.7)
+      rgba(255, 151, 29, 0.2),
+      rgba(255, 151, 29, 0.2)
     ),
     url(${HeroBg});
   background-size: cover;

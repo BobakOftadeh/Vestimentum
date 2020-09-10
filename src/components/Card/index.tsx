@@ -11,6 +11,7 @@ const StyledCard = styled(Link)`
   align-items: center;
   width: 80%;
   height: 35rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
   &:link,
   &:visited {

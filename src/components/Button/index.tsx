@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonStyle = styled.a`
+  color: white;
   text-transform: uppercase;
   background-color: var(--color-orange);
   text-decoration: none;

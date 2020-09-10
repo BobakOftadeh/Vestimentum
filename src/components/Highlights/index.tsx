@@ -4,6 +4,7 @@ import { IoIosBody } from "react-icons/io";
 import { IoMdTrophy } from "react-icons/io";
 import { IoIosBasketball } from "react-icons/io";
 import { IoMdCar } from "react-icons/io";
+
 const StyledHighlights = styled.section`
   grid-column: center-start/center-end;
   color: white;
@@ -24,16 +25,15 @@ const HighlightItem = styled.div`
   background-color: rgba(72, 139, 143, 0.7);
   transition: all 0.3s;
   backface-visibility: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   & > *:not(:last-child) {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   &:hover {
     transform: scale(1.15);
   }
-
-  > * 
 `;
 
 const Highlights = () => {

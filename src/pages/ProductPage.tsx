@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import styled from "styled-components";
 
 const ProductPageStyled = styled(PageContainer)`
-  grid-template-rows: min-content 90vh min-content;
+  grid-template-rows: min-content 95vh min-content;
   color: var(--color-orange);
 `;
 
@@ -131,7 +131,6 @@ const ProductPage = () => {
         />
       </ProductImageContainer>
       <ProductInfo>
-        {console.log(product)}
         <h2>{product.title}</h2>
         <h3>${product.variants[0].price}</h3>
         <h4>Select Size</h4>
