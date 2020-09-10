@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledFooter = styled.footer`
   grid-column: full-start/full-end;
   background-color: var(--color-primary);
-  height: 15vh;
+  height: 10vh;
 `;
 
 const Footer = () => {

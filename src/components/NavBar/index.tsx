@@ -5,7 +5,7 @@ import { IoIosCart } from "react-icons/io";
 import styled from "styled-components";
 
 const StyledNavBar = styled.nav`
-  background-color: var(--color-white);
+  background-color: white;
   position: sticky;
   top: 0;
   height: 6vh;

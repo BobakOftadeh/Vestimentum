@@ -12,10 +12,10 @@ const GlobalStyle = createGlobalStyle`
   --ratio: 1.5;
   --ratio-alt: 1.333;
   --ratio-alt-2: 1.155;
-  --color-primary: #add2c9;
-  --color-white: #faf9f9;
-  --color-pale: #5ea3a3;
-  --color-pale-light: #488b8f;
+  --color-orange: #ff971d;
+  --color-orange-light: #ffe8d6;
+  --color-white: #ffffff;
+  --color-white-pale: #f9f6f7;
   
 /* Calculate values */
   --h4: calc(var(--font-size) * var(--ratio));

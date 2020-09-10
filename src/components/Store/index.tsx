@@ -22,10 +22,10 @@ interface product {
 const StyledStore = styled.section`
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 2rem;
   place-items: center;
-  padding: 2rem;
+  padding: 3rem;
 `;
 
 const Store = () => {
@@ -39,7 +39,7 @@ const Store = () => {
   if (!products) return <div>loading</div>;
 
   return (
-    <StyledStore>
+    <StyledStore id="section-store">
       {products.map((product: product) => (
         <Card
           id={product.id}

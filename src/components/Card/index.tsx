@@ -4,13 +4,18 @@ import { Link } from "react-router-dom";
 
 const StyledCard = styled(Link)`
   display: flex;
-  background-color: var(--color-white);
+  background-color: var(--color-white-pale);
   font-size: 1.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 35rem;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
 `;
 
 const StyledImg = styled.img`
