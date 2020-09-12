@@ -91,6 +91,16 @@ class shopProvider extends Component {
     this.setState({ checkout: checkout });
   };
 
+  removeItemFromCheckout = async (checkoutId: string, lineId: string[]) => {
+    await client.checkout
+      .removeLineItems(checkoutId, lineId)
+      .then((checkout) => {
+        // Do something with the updated checkout
+        console.log(checkout.lineItems); // Checkout with line item 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=' removed
+        this.setState({ checkout: checkout });
+      });
+  };
+
   fetchAllProducts = async () => {
     const products = await client.product.fetchAll();
     this.setState({ products: products });
@@ -119,6 +129,8 @@ class shopProvider extends Component {
           closeCart: this.closeCart,
           openCart: this.openCart,
           addItemToCheckout: this.addItemToCheckout,
+          removeItemFromCheckout: this.removeItemFromCheckout,
+          fetchCheckout: this.fetchCheckout,
         }}
       >
         {this.props.children}

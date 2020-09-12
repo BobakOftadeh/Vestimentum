@@ -54,7 +54,6 @@ const CheckoutSummary = () => {
 
   return (
     <StyledOrderSummary>
-      {console.log(checkout)}
       <SummaryContainer>
         <h3>Order Summary</h3>
         <PriceContainer>

@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import { IoIosAdd } from "react-icons/io";
 import { IoIosRemove } from "react-icons/io";
+import { IoIosTrash } from "react-icons/io";
 import styled from "styled-components";
 
 type image = {
@@ -41,7 +42,7 @@ const ImgContainer = styled(Link)`
 
 const CartItemContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: 0.5rem;
   border-bottom: 3px solid var(--color-orange-light);
   margin-bottom: 2rem;
@@ -70,18 +71,56 @@ const TitleContainer = styled.h4`
 `;
 
 const PriceContainer = styled.h4`
+  grid-row: 1/2;
   grid-column: 3/4;
 `;
 
-const Cart = () => {
-  const { isCartOpen, closeCart, checkout } = useContext(ShopContext);
+const TrashContainer = styled.button`
+  height: 2rem;
+  font-size: 1.5rem;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  justify-self: end;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  color: var(--color-orange);
 
-  if (!checkout) {
-    return <div>loading</div>;
+  &:focus,
+  &:hover {
+    filter: brightness(120%);
+  }
+`;
+
+const Cart = () => {
+  const {
+    isCartOpen,
+    closeCart,
+    checkout,
+    removeItemFromCheckout,
+    fetchCheckout,
+  } = useContext(ShopContext);
+
+  const [lineItems, setLineItems] = useState<any>([]);
+
+  useEffect(() => {
+    setLineItems(checkout.lineItems);
+
+    return () => {};
+  }, []);
+
+  const removeItem = (id: string) => {
+    let item = [id];
+    removeItemFromCheckout(checkout.id, item);
+  };
+
+  if (!checkout || checkout.length === 0) {
+    return <StyledCart>loading</StyledCart>;
   }
 
   return (
     <StyledCart>
+      {console.log(checkout)}
       {checkout.lineItems &&
         checkout.lineItems.map((item: checkout) => (
           <CartItemContainer key={item.id}>
@@ -100,8 +139,10 @@ const Cart = () => {
                 <IoIosAdd />
               </button>
             </QuantityContainer>
-
             <PriceContainer>$ {item.variant.price}</PriceContainer>
+            <TrashContainer onClick={removeItem.bind(null, item.id)}>
+              <IoIosTrash />
+            </TrashContainer>
           </CartItemContainer>
         ))}
     </StyledCart>

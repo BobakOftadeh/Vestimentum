@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import CheckoutSummary from "../components/CheckoutSummary";
 
 const CheckoutPageStyled = styled(PageContainer)`
-  grid-template-rows: min-content [content-start] max(90vh, min-content) [content-end] min-content;
+  grid-template-rows: min-content [content-start] minmax(90vh, min-content) [content-end] min-content;
   color: var(--color-orange);
 `;
 
