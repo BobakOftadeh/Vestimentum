@@ -47,6 +47,7 @@ const CartItemContainer = styled.div`
   margin-bottom: 2rem;
   justify-items: center;
 `;
+
 const QuantityContainer = styled.div`
   height: 2rem;
   grid-column: 2/3;

@@ -7,7 +7,7 @@ import { IoMdCar } from "react-icons/io";
 
 const StyledHighlights = styled.section`
   grid-column: center-start/center-end;
-  color: white;
+  color: var(--color-orange);
   padding: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -22,7 +22,7 @@ const StyledHighlights = styled.section`
 const HighlightItem = styled.div`
   padding: 2rem;
   height: 18rem;
-  background-color: rgba(72, 139, 143, 0.7);
+  background-color: var(--color-orange-light);
   transition: all 0.3s;
   backface-visibility: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);

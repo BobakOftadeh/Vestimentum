@@ -42,6 +42,7 @@ const Store = () => {
     <StyledStore id="section-store">
       {products.map((product: product) => (
         <Card
+          key={product.id}
           id={product.id}
           image={product.images[0].src}
           name={product.title}

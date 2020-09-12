@@ -7,6 +7,7 @@ import ShopProvider from "./context/shopContext";
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
 :root {
   --font-size: 100%; /* 16px */
   --ratio: 1.5;
@@ -71,7 +72,7 @@ h4 {
   hyphens: auto;
 }
   
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
   :root {
     --ratio: var(--ratio-alt);
   }

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const StyledCard = styled(Link)`
   display: flex;
   background-color: var(--color-white-pale);
+  color: var(--color-orange);
   font-size: 1.5rem;
   flex-direction: column;
   justify-content: center;

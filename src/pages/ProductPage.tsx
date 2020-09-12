@@ -25,6 +25,10 @@ const ProductImageContainer = styled.div`
   display: grid;
   place-content: center;
   height: 100%;
+
+  @media only screen and (max-width: 1000px) {
+    grid-column: full-start / full-end;
+  }
 `;
 
 const ProductInfo = styled.div`
@@ -35,6 +39,10 @@ const ProductInfo = styled.div`
   margin-left: 5rem;
   & > * {
     margin-bottom: 2rem;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    grid-column: full-start / full-end;
   }
 `;
 
@@ -123,12 +131,7 @@ const ProductPage = () => {
     <ProductPageStyled>
       <NavBar />
       <ProductImageContainer>
-        <ProductImage
-          src={product.images[0].src}
-          alt=""
-          width="42"
-          height="42"
-        />
+        <ProductImage src={product.images[0].src} alt="" />
       </ProductImageContainer>
       <ProductInfo>
         <h2>{product.title}</h2>
