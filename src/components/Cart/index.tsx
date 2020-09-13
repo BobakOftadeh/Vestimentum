@@ -55,6 +55,7 @@ const QuantityContainer = styled.div`
   grid-row: 1/2;
   margin-top: 3rem;
   display: flex;
+  align-items: center;
 
   & > :not(:last-child) {
     margin-right: 1.5rem;
@@ -77,7 +78,7 @@ const PriceContainer = styled.h4`
 
 const TrashContainer = styled.button`
   height: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   border: none;
   background-color: inherit;
   cursor: pointer;
@@ -85,11 +86,15 @@ const TrashContainer = styled.button`
   grid-column: 3/4;
   grid-row: 1/2;
   color: var(--color-orange);
-
+  outline-color: var(--color-orange);
   &:focus,
   &:hover {
     filter: brightness(120%);
   }
+`;
+
+const styledQuantityButton = styled(TrashContainer)`
+  font-size: 2rem;
 `;
 
 const Cart = () => {
@@ -98,7 +103,7 @@ const Cart = () => {
     closeCart,
     checkout,
     removeItemFromCheckout,
-    fetchCheckout,
+    updateItemInCheckout,
   } = useContext(ShopContext);
 
   const [lineItems, setLineItems] = useState<any>([]);
@@ -112,6 +117,20 @@ const Cart = () => {
   const removeItem = (id: string) => {
     let item = [id];
     removeItemFromCheckout(checkout.id, item);
+  };
+
+  const increaseQuantity = (itemId: string, quantity: string) => {
+    let incrementedQuantity = +quantity + 1;
+    const lineItemtoUpdate = [{ id: itemId, quantity: incrementedQuantity }];
+    updateItemInCheckout(checkout.id, lineItemtoUpdate);
+  };
+
+  const decreaseQuantity = (itemId: string, quantity: string) => {
+    let decrementedQuantity = +quantity - 1;
+    if (decrementedQuantity > 0) {
+      const lineItemtoUpdate = [{ id: itemId, quantity: decrementedQuantity }];
+      updateItemInCheckout(checkout.id, lineItemtoUpdate);
+    }
   };
 
   if (!checkout || checkout.length === 0) {
@@ -131,13 +150,17 @@ const Cart = () => {
               {item.title}, {item.variant.title}
             </TitleContainer>
             <QuantityContainer>
-              <button>
+              <TrashContainer
+                onClick={decreaseQuantity.bind(null, item.id, item.quantity)}
+              >
                 <IoIosRemove />
-              </button>
+              </TrashContainer>
               <h4>{item.quantity}</h4>
-              <button>
+              <TrashContainer
+                onClick={increaseQuantity.bind(null, item.id, item.quantity)}
+              >
                 <IoIosAdd />
-              </button>
+              </TrashContainer>
             </QuantityContainer>
             <PriceContainer>$ {item.variant.price}</PriceContainer>
             <TrashContainer onClick={removeItem.bind(null, item.id)}>

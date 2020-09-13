@@ -69,6 +69,8 @@ const StyledCartSVGContainer = styled(Link)`
 const NavBar = () => {
   const { openCart } = useContext(ShopContext);
 
+  window.scroll = () => {};
+
   return (
     <StyledNavBar>
       <Link to="/">

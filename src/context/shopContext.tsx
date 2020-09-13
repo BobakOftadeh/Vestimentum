@@ -101,6 +101,23 @@ class shopProvider extends Component {
       });
   };
 
+  updateItemInCheckout = async (
+    checkoutId: string,
+    lineItem: [{ id: string; quanitity: number }]
+  ) => {
+    console.log(client.checkout);
+
+    await client.checkout
+      // @ts-ignore
+      .updateLineItems(checkoutId, lineItem)
+      // @ts-ignore
+      .then((checkout) => {
+        // Do something with the updated checkout
+        this.setState({ checkout: checkout });
+        console.log(checkout.lineItems); // Quantity of line item 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=' updated to 2
+      });
+  };
+
   fetchAllProducts = async () => {
     const products = await client.product.fetchAll();
     this.setState({ products: products });
@@ -131,6 +148,7 @@ class shopProvider extends Component {
           addItemToCheckout: this.addItemToCheckout,
           removeItemFromCheckout: this.removeItemFromCheckout,
           fetchCheckout: this.fetchCheckout,
+          updateItemInCheckout: this.updateItemInCheckout,
         }}
       >
         {this.props.children}
