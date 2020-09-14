@@ -66,12 +66,14 @@ const CheckoutSummary = () => {
             <span>${checkout.totalPrice}</span>
           </p>
           <p>
-            <span>Tax </span>
-            <span>${checkout.totalPrice * 0.13}</span>
+            <span>Tax: </span>
+            <span>${(+checkout.totalPrice * 0.13).toFixed(2)}</span>
           </p>
           <p>
-            <span>Total </span>
-            <span>${checkout.totalPrice}</span>
+            <span>Total: </span>
+            <span>
+              ${(+checkout.totalPrice + +checkout.totalPrice * 0.13).toFixed(2)}
+            </span>
           </p>
         </PriceContainer>
         <Button href={checkout.webUrl}>Proceed To Checkout</Button>
