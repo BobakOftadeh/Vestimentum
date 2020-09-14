@@ -139,11 +139,10 @@ const Cart = () => {
 
   return (
     <StyledCart>
-      {console.log(checkout)}
       {checkout.lineItems &&
         checkout.lineItems.map((item: checkout) => (
           <CartItemContainer key={item.id}>
-            <ImgContainer to="/">
+            <ImgContainer to={`/product/${item.id}`}>
               <StyledImg src={item.variant.image.src} alt="" />
             </ImgContainer>
             <TitleContainer>

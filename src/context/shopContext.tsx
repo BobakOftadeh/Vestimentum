@@ -95,8 +95,6 @@ class shopProvider extends Component {
     await client.checkout
       .removeLineItems(checkoutId, lineId)
       .then((checkout) => {
-        // Do something with the updated checkout
-        console.log(checkout.lineItems); // Checkout with line item 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=' removed
         this.setState({ checkout: checkout });
       });
   };
@@ -105,8 +103,6 @@ class shopProvider extends Component {
     checkoutId: string,
     lineItem: [{ id: string; quanitity: number }]
   ) => {
-    console.log(client.checkout);
-
     await client.checkout
       // @ts-ignore
       .updateLineItems(checkoutId, lineItem)
@@ -114,7 +110,6 @@ class shopProvider extends Component {
       .then((checkout) => {
         // Do something with the updated checkout
         this.setState({ checkout: checkout });
-        console.log(checkout.lineItems); // Quantity of line item 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=' updated to 2
       });
   };
 

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../context/shopContext";
 import { IoIosCart } from "react-icons/io";
@@ -6,17 +6,36 @@ import styled from "styled-components";
 import { ReactComponent as Logo } from "../../images/Logo.svg";
 
 const StyledNavBar = styled.nav`
-  color: var(--color-orange);
-  background-color: white;
-  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  height: 8vh;
+`;
+
+const StyledNavBarContainer = styled.nav<{ toShow: boolean }>`
+  color: var(--color-orange);
+  background-color: white;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 200ms ease-out;
+  opacity: ${(props) => (props.toShow ? 1 : 0)};
   top: 0;
   height: 8vh;
   z-index: 999;
-  grid-column: full-start/full-end;
+  grid-column: 1/-1;
+
+  .active {
+    visibility: visible;
+    transition: all 200ms ease-in;
+  }
+  .hidden {
+    visibility: hidden;
+    transition: all 200ms ease-out;
+    z-index: -999;
+    transform: translate(0, -100%);
+  }
 `;
 
 const StyledLogo = styled(Logo)`
@@ -68,19 +87,33 @@ const StyledCartSVGContainer = styled(Link)`
 
 const NavBar = () => {
   const { openCart } = useContext(ShopContext);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [show, setShow] = useState(true);
 
-  window.scroll = () => {};
+  const onScroll = () => {
+    setScrollPosition(document.body.getBoundingClientRect().top);
+    setShow(document.body.getBoundingClientRect().top > scrollPosition);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  });
 
   return (
-    <StyledNavBar>
-      <Link to="/">
-        <StyledLogo />
-      </Link>
-      <NavTitleContainer to="/">Vestimentum</NavTitleContainer>
-      <StyledCartSVGContainer to="/checkout">
-        <StyledCartSVG />
-      </StyledCartSVGContainer>
-    </StyledNavBar>
+    <StyledNavBarContainer toShow={show}>
+      <StyledNavBar className={show ? "active" : "hidden"}>
+        <Link to="/">
+          <StyledLogo />
+        </Link>
+        <NavTitleContainer to="/">Vestimentum</NavTitleContainer>
+        <StyledCartSVGContainer to="/checkout">
+          <StyledCartSVG />
+        </StyledCartSVGContainer>
+      </StyledNavBar>
+    </StyledNavBarContainer>
   );
 };
 

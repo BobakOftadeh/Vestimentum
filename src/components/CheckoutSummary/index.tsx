@@ -52,6 +52,10 @@ const PriceContainer = styled.div`
 const CheckoutSummary = () => {
   const { checkout } = useContext(ShopContext);
 
+  if (!checkout || checkout.length === 0) {
+    return <StyledOrderSummary>loading</StyledOrderSummary>;
+  }
+
   return (
     <StyledOrderSummary>
       <SummaryContainer>
@@ -70,7 +74,7 @@ const CheckoutSummary = () => {
             <span>${checkout.totalPrice}</span>
           </p>
         </PriceContainer>
-        <Button href={checkout.weburl}>Proceed To Checkout</Button>
+        <Button href={checkout.webUrl}>Proceed To Checkout</Button>
       </SummaryContainer>
     </StyledOrderSummary>
   );
