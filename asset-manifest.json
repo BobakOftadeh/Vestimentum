@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/Vestimentum/static/js/main.0f8917a3.chunk.js",
+    "main.js.map": "/Vestimentum/static/js/main.0f8917a3.chunk.js.map",
+    "runtime-main.js": "/Vestimentum/static/js/runtime-main.05e94325.js",
+    "runtime-main.js.map": "/Vestimentum/static/js/runtime-main.05e94325.js.map",
+    "static/js/2.84f92552.chunk.js": "/Vestimentum/static/js/2.84f92552.chunk.js",
+    "static/js/2.84f92552.chunk.js.map": "/Vestimentum/static/js/2.84f92552.chunk.js.map",
+    "index.html": "/Vestimentum/index.html",
+    "precache-manifest.142cb9414fa388342f38c9dcde461ffa.js": "/Vestimentum/precache-manifest.142cb9414fa388342f38c9dcde461ffa.js",
+    "service-worker.js": "/Vestimentum/service-worker.js",
+    "static/js/2.84f92552.chunk.js.LICENSE.txt": "/Vestimentum/static/js/2.84f92552.chunk.js.LICENSE.txt",
+    "static/media/HeroBg.jpg": "/Vestimentum/static/media/HeroBg.c186a69e.jpg",
+    "static/media/Logo.806868da.svg": "/Vestimentum/static/media/Logo.806868da.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05e94325.js",
+    "static/js/2.84f92552.chunk.js",
+    "static/js/main.0f8917a3.chunk.js"
+  ]
+}
