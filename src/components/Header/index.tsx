@@ -19,10 +19,14 @@ const StyledHeader = styled.header`
   height: 75vh;
 `;
 
+const StyledTitle = styled.h1`
+  font-family: "Indie Flower", sans-serif;
+`;
+
 const Header = () => {
   return (
     <StyledHeader>
-      <h1>The Sports Store</h1>
+      <StyledTitle>Vestimentum</StyledTitle>
       <h2>Buy the latest and greatest shirts</h2>
       <Button href="#section-store">Shop Now</Button>
     </StyledHeader>
