@@ -46,12 +46,8 @@ const GlobalStyle = createGlobalStyle`
   font-size: 60%
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
   font-size: 50%
-}
-
-@media only screen and (max-width: 300px) {
-  font-size: 40%
 }
 
   }
