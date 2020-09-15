@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   --ratio: 1.5;
   --ratio-alt: 1.333;
   --ratio-alt-2: 1.155;
+  --ratio-alt-3: 1;
   --color-orange: #ff971d;
   --color-orange-light: #ffe8d6;
   --color-white: #ffffff;
@@ -36,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     font-family: "Open Sans", sans-serif;
     text-rendering: optimizeLegibility;
+
   }
   body {
     line-height: 1.5;
@@ -76,15 +78,16 @@ h4 {
   :root {
     --ratio: var(--ratio-alt);
   }
+  font-size: 80%;
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   :root {
     --ratio: var(--ratio-alt-2);
   }
 }
-  
+
 `;
 
 function App() {

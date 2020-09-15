@@ -12,6 +12,9 @@ import styled from "styled-components";
 const ProductPageStyled = styled(PageContainer)`
   grid-template-rows: min-content 95vh min-content;
   color: var(--color-orange);
+  @media only screen and (max-width: 1000px) {
+    grid-template-rows: auto;
+  }
 `;
 
 const ProductImage = styled.img`
@@ -37,13 +40,18 @@ const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0;
   margin-left: 5rem;
+  align-items: stretch;
   & > * {
     margin-bottom: 2rem;
   }
 
   @media only screen and (max-width: 1000px) {
     grid-column: full-start / full-end;
+    align-items: center;
+    padding: 3rem;
+    margin-left: 0;
   }
 `;
 
@@ -53,6 +61,10 @@ const ButtonContainer = styled.div`
 
   button {
     font-size: 1.5rem;
+
+    @media only screen and (max-width: 1000px) {
+      font-size: 1rem;
+    }
   }
 
   & > :not(:last-child) {
@@ -80,7 +92,7 @@ const AddCartButton = styled(Link)`
   position: relative;
   font-size: 1.5rem;
   border: none;
-  width: 18rem;
+  width: max-content;
   cursor: pointer;
 
   &:hover {
@@ -109,6 +121,11 @@ const AddCartButton = styled(Link)`
     z-index: -1;
     height: 100%;
     width: 100%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 1rem;
+    width: auto;
   }
 `;
 

@@ -42,6 +42,10 @@ const ButtonStyle = styled.a`
     height: 100%;
     width: 100%;
   }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 1rem;
+  }
 `;
 
 interface ButtonProps {

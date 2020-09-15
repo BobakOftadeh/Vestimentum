@@ -31,6 +31,8 @@ const StyledOrderSummary = styled.div`
 
   @media only screen and (max-width: 1000px) {
     grid-column: full-start / full-end;
+    padding: 6rem;
+    grid-row: auto;
   }
 `;
 
