@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e8a715333334f6fc50d962235c459af8",
+    "revision": "6c280ad848fef3136eac629fcbd1356e",
     "url": "/Vestimentum/index.html"
   },
   {
-    "revision": "df7f71d82add750402c8",
-    "url": "/Vestimentum/static/js/2.84f92552.chunk.js"
+    "revision": "446cb42e155899a79151",
+    "url": "/Vestimentum/static/js/2.1d66416a.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Vestimentum/static/js/2.84f92552.chunk.js.LICENSE.txt"
+    "url": "/Vestimentum/static/js/2.1d66416a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3645f6204ac5f554a207",
-    "url": "/Vestimentum/static/js/main.0f8917a3.chunk.js"
+    "revision": "9f189ce13079dfa8d75b",
+    "url": "/Vestimentum/static/js/main.13995a95.chunk.js"
   },
   {
     "revision": "85d885854973ae4e255f",
