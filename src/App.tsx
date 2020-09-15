@@ -38,12 +38,20 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Open Sans", sans-serif;
     text-rendering: optimizeLegibility;
 
-    @media only screen and (max-width: 600px) {
+
+    @media only screen and (max-width: 1000px) {
   font-size: 80%
 }
+    @media only screen and (max-width: 600px) {
+  font-size: 60%
+}
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   font-size: 50%
+}
+
+@media only screen and (max-width: 300px) {
+  font-size: 40%
 }
 
   }
