@@ -5,6 +5,7 @@ import { PageContainer } from "./style";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Button from "../components/Button";
+import Skeleton from "react-loading-skeleton";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 
@@ -114,17 +115,43 @@ const AddCartButton = styled(Link)`
 const ProductPage = () => {
   const [variant, setVariant] = useState(0);
   let { id } = useParams();
-  const { fetchProductWithId, addItemToCheckout, product } = useContext(
-    ShopContext
-  );
+  const {
+    fetchProductWithId,
+    addItemToCheckout,
+    clearProduct,
+    product,
+  } = useContext(ShopContext);
 
   useEffect(() => {
     fetchProductWithId(id);
-    return () => {};
-  }, [fetchProductWithId, id]);
+    return () => {
+      clearProduct();
+    };
+  }, [fetchProductWithId, clearProduct, id]);
 
   if (!product.title) {
-    return <div>loading</div>;
+    return (
+      <div>
+        <ProductPageStyled>
+          <NavBar />
+          <ProductImageContainer>
+            <Skeleton />
+          </ProductImageContainer>
+          <ProductInfo>
+            <h2>
+              <Skeleton />
+            </h2>
+            <h3>
+              <Skeleton />
+            </h3>
+            <h4>
+              <Skeleton />
+            </h4>
+          </ProductInfo>
+          <Footer />
+        </ProductPageStyled>
+      </div>
+    );
   }
 
   return (

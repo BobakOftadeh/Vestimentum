@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 import styled from "styled-components";
+import Skeleton from "react-loading-skeleton";
 import Button from "../Button";
 
 type image = {
@@ -27,6 +28,10 @@ const StyledOrderSummary = styled.div`
   display: flex;
   padding-top: 5rem;
   justify-content: center;
+
+  @media only screen and (max-width: 1000px) {
+    grid-column: full-start / full-end;
+  }
 `;
 
 const SummaryContainer = styled.div`
@@ -53,7 +58,12 @@ const CheckoutSummary = () => {
   const { checkout } = useContext(ShopContext);
 
   if (!checkout || checkout.length === 0) {
-    return <StyledOrderSummary>loading</StyledOrderSummary>;
+    return (
+      <StyledOrderSummary>
+        <Skeleton />
+        <Skeleton count={5} />
+      </StyledOrderSummary>
+    );
   }
 
   return (

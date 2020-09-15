@@ -5,6 +5,7 @@ import Button from "../Button";
 import { IoIosAdd } from "react-icons/io";
 import { IoIosRemove } from "react-icons/io";
 import { IoIosTrash } from "react-icons/io";
+import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
 
 type image = {
@@ -30,6 +31,10 @@ const StyledCart = styled.div`
   grid-row: content-start / content-end;
   background-color: var(--color-white-pale);
   padding: 3rem;
+
+  @media only screen and (max-width: 1000px) {
+    grid-column: full-start / full-end;
+  }
 `;
 
 const StyledImg = styled.img`
@@ -102,17 +107,19 @@ const Cart = () => {
     isCartOpen,
     closeCart,
     checkout,
+    fetchCheckout,
     removeItemFromCheckout,
     updateItemInCheckout,
   } = useContext(ShopContext);
 
-  const [lineItems, setLineItems] = useState<any>([]);
+  const [lineItemsLength, setLineItemLength] = useState(0);
 
   useEffect(() => {
-    setLineItems(checkout.lineItems);
-
+    if (checkout.id !== "") {
+      setLineItemLength(checkout.lineItems.length);
+    }
     return () => {};
-  }, []);
+  }, [checkout]);
 
   const removeItem = (id: string) => {
     let item = [id];
@@ -133,13 +140,26 @@ const Cart = () => {
     }
   };
 
-  if (!checkout || checkout.length === 0) {
-    return <StyledCart>loading</StyledCart>;
+  const EmptyCartTitle = styled.h3`
+    display: grid;
+    place-items: center;
+  `;
+
+  if (checkout.id === "") {
+    return (
+      <StyledCart>
+        <Skeleton />
+        <Skeleton count={5} />
+      </StyledCart>
+    );
   }
 
   return (
     <StyledCart>
-      {checkout.lineItems &&
+      {lineItemsLength === 0 ? (
+        <EmptyCartTitle>YOUR SHOPPING BAG IS EMPTY</EmptyCartTitle>
+      ) : (
+        checkout.lineItems &&
         checkout.lineItems.map((item: checkout) => (
           <CartItemContainer key={item.id}>
             <ImgContainer to={`/product/${item.id}`}>
@@ -166,7 +186,8 @@ const Cart = () => {
               <IoIosTrash />
             </TrashContainer>
           </CartItemContainer>
-        ))}
+        ))
+      )}
     </StyledCart>
   );
 };
