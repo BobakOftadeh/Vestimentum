@@ -10,8 +10,8 @@ const StyledCard = styled(Link)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
   width: 80%;
-  height: 35rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
   &:link,
@@ -36,7 +36,7 @@ const Card: React.FC<cardProps> = (props) => {
     <StyledCard to={`/product/${props.id}`}>
       <StyledImg src={props.image} alt="" />
       <div>{props.name}</div>
-      <div>{props.price}</div>
+      <div>${props.price}</div>
     </StyledCard>
   );
 };

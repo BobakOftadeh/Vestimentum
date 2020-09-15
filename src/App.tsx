@@ -38,6 +38,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Open Sans", sans-serif;
     text-rendering: optimizeLegibility;
 
+    @media only screen and (max-width: 600px) {
+  font-size: 80%
+}
+
+@media only screen and (max-width: 400px) {
+  font-size: 50%
+}
+
   }
   body {
     line-height: 1.5;
@@ -74,18 +82,11 @@ h4 {
   hyphens: auto;
 }
   
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1400px) {
   :root {
     --ratio: var(--ratio-alt);
   }
   font-size: 80%;
-}
-
-
-@media only screen and (max-width: 600px) {
-  :root {
-    --ratio: var(--ratio-alt-2);
-  }
 }
 
 `;

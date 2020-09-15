@@ -61,6 +61,7 @@ const StyledCartSVGContainer = styled(Link)`
   position: relative;
   transition: all 0.5s;
   color: var(--color-orange);
+  margin-right: 1rem;
 
   &::after {
     content: "";

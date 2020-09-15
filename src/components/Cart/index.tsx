@@ -49,9 +49,12 @@ const CartItemContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: 0.5rem;
-  border-bottom: 3px solid var(--color-orange-light);
   margin-bottom: 2rem;
   justify-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 3px solid var(--color-orange-light);
+  }
 `;
 
 const QuantityContainer = styled.div`

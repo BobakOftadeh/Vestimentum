@@ -61,10 +61,6 @@ const ButtonContainer = styled.div`
 
   button {
     font-size: 1.5rem;
-
-    @media only screen and (max-width: 1000px) {
-      font-size: 1rem;
-    }
   }
 
   & > :not(:last-child) {
@@ -124,7 +120,6 @@ const AddCartButton = styled(Link)`
   }
 
   @media only screen and (max-width: 1000px) {
-    font-size: 1rem;
     width: auto;
   }
 `;

@@ -16,6 +16,7 @@ const StyledHeader = styled.header`
     ),
     url(${HeroBg});
   background-size: cover;
+  background-attachment: fixed;
   height: 75vh;
 `;
 

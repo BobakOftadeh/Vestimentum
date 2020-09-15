@@ -26,6 +26,10 @@ const StyledStore = styled.section`
   grid-gap: 2rem;
   place-items: center;
   padding: 3rem;
+
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+  }
 `;
 
 const Store = () => {

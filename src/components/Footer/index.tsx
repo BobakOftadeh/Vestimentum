@@ -9,6 +9,7 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   flex-direction: row;
+  padding: 2rem;
   justify-content: space-around;
 
   @media only screen and (max-width: 600px) {
