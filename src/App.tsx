@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ShopProvider from "./context/shopContext";
+import ScrollToTop from "./components/ScrollToTop";
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -100,6 +101,7 @@ function App() {
     <ShopProvider>
       <GlobalStyle />
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route path="/product/:id">
             <ProductPage />

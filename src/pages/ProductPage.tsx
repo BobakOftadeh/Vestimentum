@@ -72,6 +72,8 @@ const SizeButton = styled.button`
   background-color: none;
   color: var(--color-orange);
   cursor: pointer;
+  width: 3rem;
+  outline-color: inherit;
   padding: 0.75rem;
   border: none;
 `;
@@ -145,9 +147,9 @@ const ProductPage = () => {
     return (
       <div>
         <ProductPageStyled>
-          <NavBar />
+          <NavBar fixed={true} />
           <ProductImageContainer>
-            <Skeleton />
+            <Skeleton width={100} height={100} />
           </ProductImageContainer>
           <ProductInfo>
             <h2>
@@ -168,7 +170,7 @@ const ProductPage = () => {
 
   return (
     <ProductPageStyled>
-      <NavBar />
+      <NavBar fixed={true} />
       <ProductImageContainer>
         <ProductImage src={product.images[0].src} alt="" />
       </ProductImageContainer>

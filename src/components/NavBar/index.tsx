@@ -19,7 +19,7 @@ const StyledNavBarContainer = styled.nav<{ toShow: boolean }>`
   position: sticky;
   justify-content: space-between;
   align-items: center;
-  transition: all 200ms ease-out;
+  transition: all 0.2s ease-out;
   opacity: ${(props) => (props.toShow ? 1 : 0)};
   top: 0;
   height: 8vh;
@@ -28,11 +28,11 @@ const StyledNavBarContainer = styled.nav<{ toShow: boolean }>`
 
   .active {
     visibility: visible;
-    transition: all 200ms ease-in;
+    transition: all 0.2s ease-in;
   }
   .hidden {
     visibility: hidden;
-    transition: all 200ms ease-out;
+    transition: all 0.2s ease-out;
     z-index: -999;
     transform: translate(0, -100%);
   }
@@ -86,7 +86,11 @@ const StyledCartSVGContainer = styled(Link)`
   }
 `;
 
-const NavBar = () => {
+interface NavBarProps {
+  fixed?: boolean;
+}
+
+const NavBar: React.FC<NavBarProps> = (props) => {
   const { openCart } = useContext(ShopContext);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [show, setShow] = useState(true);
@@ -97,7 +101,10 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", onScroll);
+    if (!props.fixed) {
+      window.addEventListener("scroll", onScroll);
+    }
+
     return () => {
       window.removeEventListener("scroll", onScroll);
     };

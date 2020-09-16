@@ -18,7 +18,7 @@ const CheckoutPageStyled = styled(PageContainer)`
 const CheckoutPage = () => {
   return (
     <CheckoutPageStyled>
-      <NavBar />
+      <NavBar fixed={true} />
       <Cart />
       <CheckoutSummary />
       <Footer />

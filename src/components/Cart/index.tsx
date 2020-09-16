@@ -160,7 +160,7 @@ const Cart = () => {
   return (
     <StyledCart>
       {lineItemsLength === 0 ? (
-        <EmptyCartTitle>YOUR SHOPPING BAG IS EMPTY</EmptyCartTitle>
+        <EmptyCartTitle>YOUR SHOPPING CART IS EMPTY</EmptyCartTitle>
       ) : (
         checkout.lineItems &&
         checkout.lineItems.map((item: checkout) => (
