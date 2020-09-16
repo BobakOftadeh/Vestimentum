@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/Vestimentum/static/js/main.3f5133e5.chunk.js",
-    "main.js.map": "/Vestimentum/static/js/main.3f5133e5.chunk.js.map",
+    "main.js": "/Vestimentum/static/js/main.42448d2a.chunk.js",
+    "main.js.map": "/Vestimentum/static/js/main.42448d2a.chunk.js.map",
     "runtime-main.js": "/Vestimentum/static/js/runtime-main.05e94325.js",
     "runtime-main.js.map": "/Vestimentum/static/js/runtime-main.05e94325.js.map",
-    "static/js/2.1d66416a.chunk.js": "/Vestimentum/static/js/2.1d66416a.chunk.js",
-    "static/js/2.1d66416a.chunk.js.map": "/Vestimentum/static/js/2.1d66416a.chunk.js.map",
+    "static/js/2.ff1b25cb.chunk.js": "/Vestimentum/static/js/2.ff1b25cb.chunk.js",
+    "static/js/2.ff1b25cb.chunk.js.map": "/Vestimentum/static/js/2.ff1b25cb.chunk.js.map",
     "index.html": "/Vestimentum/index.html",
-    "precache-manifest.48ed3de3087ec99b8805f82c02ace460.js": "/Vestimentum/precache-manifest.48ed3de3087ec99b8805f82c02ace460.js",
+    "precache-manifest.1bc84225810c88d141c063c8d1e79783.js": "/Vestimentum/precache-manifest.1bc84225810c88d141c063c8d1e79783.js",
     "service-worker.js": "/Vestimentum/service-worker.js",
-    "static/js/2.1d66416a.chunk.js.LICENSE.txt": "/Vestimentum/static/js/2.1d66416a.chunk.js.LICENSE.txt",
+    "static/js/2.ff1b25cb.chunk.js.LICENSE.txt": "/Vestimentum/static/js/2.ff1b25cb.chunk.js.LICENSE.txt",
     "static/media/HeroBg.jpg": "/Vestimentum/static/media/HeroBg.c186a69e.jpg",
     "static/media/Logo.806868da.svg": "/Vestimentum/static/media/Logo.806868da.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.05e94325.js",
-    "static/js/2.1d66416a.chunk.js",
-    "static/js/main.3f5133e5.chunk.js"
+    "static/js/2.ff1b25cb.chunk.js",
+    "static/js/main.42448d2a.chunk.js"
   ]
 }

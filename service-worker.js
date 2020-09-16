@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Vestimentum/precache-manifest.48ed3de3087ec99b8805f82c02ace460.js"
+  "/Vestimentum/precache-manifest.1bc84225810c88d141c063c8d1e79783.js"
 );
 
 self.addEventListener('message', (event) => {
