@@ -10,7 +10,7 @@ const StyledHighlights = styled.section`
   color: var(--color-orange);
   padding: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 3rem;
   text-align: center;
 

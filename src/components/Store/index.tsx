@@ -22,7 +22,7 @@ interface product {
 const StyledStore = styled.section`
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 2rem;
   place-items: center;
   padding: 3rem;
