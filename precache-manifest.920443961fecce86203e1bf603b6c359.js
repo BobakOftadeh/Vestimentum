@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b71b9f6402e9d25e291f7278c0a8d5d3",
+    "revision": "1a7183e0df7cef2133d521ad7a6e2466",
     "url": "/Vestimentum/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Vestimentum/static/js/2.fbd2f8a2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2d9f2233728f7c7b77b7",
-    "url": "/Vestimentum/static/js/main.fd9334eb.chunk.js"
+    "revision": "43ff389a613285ef8239",
+    "url": "/Vestimentum/static/js/main.85d6dcca.chunk.js"
   },
   {
     "revision": "85d885854973ae4e255f",
