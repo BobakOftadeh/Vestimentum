@@ -12,6 +12,10 @@ export const StyledHighlights = styled.section`
   svg {
     font-size: 3rem;
   }
+
+  @media only screen and (max-width: 1600px) {
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+  }
 `;
 
 export const HighlightItem = styled.div`
