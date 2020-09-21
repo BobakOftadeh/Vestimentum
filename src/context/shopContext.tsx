@@ -17,10 +17,6 @@ const client = Client.buildClient({
   storefrontAccessToken: ACESSTOKEN,
 });
 
-type checkoutResponse = {
-  id: string;
-};
-
 type product = {
   id: string;
   title: string;
@@ -127,14 +123,6 @@ class shopProvider extends Component {
     this.setState({ product: {} });
   };
 
-  closeCart = async () => {
-    this.setState({ isCartOpen: false });
-  };
-
-  openCart = async () => {
-    this.setState({ isCartOpen: true });
-  };
-
   render() {
     return (
       <ShopContext.Provider
@@ -142,8 +130,6 @@ class shopProvider extends Component {
           ...this.state,
           fetchAllProducts: this.fetchAllProducts,
           fetchProductWithId: this.fetchProductWithId,
-          closeCart: this.closeCart,
-          openCart: this.openCart,
           addItemToCheckout: this.addItemToCheckout,
           removeItemFromCheckout: this.removeItemFromCheckout,
           fetchCheckout: this.fetchCheckout,

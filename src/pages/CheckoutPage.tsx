@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ShopContext } from "../context/shopContext";
+import React from "react";
 import styled from "styled-components";
 import { PageContainer } from "./style";
 import Cart from "../components/Cart";

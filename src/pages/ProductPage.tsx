@@ -4,7 +4,6 @@ import { ShopContext } from "../context/shopContext";
 import { PageContainer } from "./style";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import Button from "../components/Button";
 import Skeleton from "react-loading-skeleton";
 import Footer from "../components/Footer";
 import styled from "styled-components";

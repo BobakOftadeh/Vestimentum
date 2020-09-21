@@ -1,6 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { ShopContext } from "../context/shopContext";
-import { Link } from "react-router-dom";
+import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import { PageContainer } from "./style";
