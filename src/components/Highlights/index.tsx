@@ -10,7 +10,7 @@ const StyledHighlights = styled.section`
   color: var(--color-orange);
   padding: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
   text-align: center;
 
@@ -49,7 +49,7 @@ const Highlights = () => {
       </HighlightItem>
       <HighlightItem>
         <IoMdTrophy />
-        <h4>Great Fit</h4>
+        <h4>Award Winning</h4>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima
           libero excepturi provident dolor aliquid, itaque reprehenderit.
@@ -57,7 +57,7 @@ const Highlights = () => {
       </HighlightItem>
       <HighlightItem>
         <IoIosBasketball />
-        <h4>Great Fit</h4>
+        <h4>Sports Ready</h4>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima
           libero excepturi provident dolor aliquid, itaque reprehenderit.
@@ -65,7 +65,7 @@ const Highlights = () => {
       </HighlightItem>
       <HighlightItem>
         <IoMdCar />
-        <h4>Great Fit</h4>
+        <h4>Fast Shipping</h4>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima
           libero excepturi provident dolor aliquid, itaque reprehenderit.

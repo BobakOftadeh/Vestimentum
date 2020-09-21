@@ -13,10 +13,16 @@ const StyledCard = styled(Link)`
   padding: 2rem;
   width: 80%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
 
   &:link,
   &:visited {
     text-decoration: none;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 `;
 

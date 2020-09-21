@@ -19,17 +19,26 @@ interface product {
   variants: variant[];
 }
 
-const StyledStore = styled.section`
-  grid-column: center-start/center-end;
+const StyledStore = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 3rem;
   place-items: center;
   padding: 3rem;
 
   @media only screen and (max-width: 1000px) {
     grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
   }
+`;
+
+const StoreWrapper = styled.section`
+  grid-column: center-start/center-end;
+`;
+
+const StoreTitle = styled.h2`
+  margin-top: 1rem;
+  color: var(--color-orange);
+  text-align: center;
 `;
 
 const Store = () => {
@@ -43,17 +52,20 @@ const Store = () => {
   if (!products) return <div>loading</div>;
 
   return (
-    <StyledStore id="section-store">
-      {products.map((product: product) => (
-        <Card
-          key={product.id}
-          id={product.id}
-          image={product.images[0].src}
-          name={product.title}
-          price={product.variants[0].price}
-        />
-      ))}
-    </StyledStore>
+    <StoreWrapper id="section-store">
+      <StoreTitle>Our Products</StoreTitle>
+      <StyledStore>
+        {products.map((product: product) => (
+          <Card
+            key={product.id}
+            id={product.id}
+            image={product.images[0].src}
+            name={product.title}
+            price={product.variants[0].price}
+          />
+        ))}
+      </StyledStore>
+    </StoreWrapper>
   );
 };
 

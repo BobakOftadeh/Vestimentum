@@ -11,8 +11,8 @@ const StyledHeader = styled.header`
   place-content: center;
   place-items: center;
   background-image: linear-gradient(
-      rgba(255, 151, 29, 0.7),
-      rgba(255, 151, 29, 0.7)
+      rgba(255, 151, 29, 0.8),
+      rgba(255, 151, 29, 0.8)
     ),
     url(${HeroBg});
   background-size: cover;
@@ -24,11 +24,15 @@ const StyledTitle = styled.h1`
   font-family: "Indie Flower", sans-serif;
 `;
 
+const StyledSubTitle = styled.h2`
+  margin-bottom: 2rem;
+`;
+
 const Header = () => {
   return (
     <StyledHeader>
       <StyledTitle>Vestimentum</StyledTitle>
-      <h2>Buy the latest and greatest shirts</h2>
+      <StyledSubTitle>Buy the latest and greatest shirts</StyledSubTitle>
       <Button href="#section-store">Shop Now</Button>
     </StyledHeader>
   );

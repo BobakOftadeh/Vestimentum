@@ -37,6 +37,10 @@ const StyledCart = styled.div`
   }
 `;
 
+const StyledEmptyCart = styled(StyledCart)`
+  padding: 10rem;
+`;
+
 const StyledImg = styled.img`
   width: 100%;
 `;
@@ -146,14 +150,15 @@ const Cart = () => {
   const EmptyCartTitle = styled.h3`
     display: grid;
     place-items: center;
+    padding: 2rem;
   `;
 
   if (checkout.id === "") {
     return (
-      <StyledCart>
+      <StyledEmptyCart>
         <Skeleton />
         <Skeleton count={5} />
-      </StyledCart>
+      </StyledEmptyCart>
     );
   }
 

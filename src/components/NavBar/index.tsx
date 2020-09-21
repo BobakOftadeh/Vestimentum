@@ -40,12 +40,12 @@ const StyledNavBarContainer = styled.nav<{ toShow: boolean }>`
 
 const StyledLogo = styled(Logo)`
   height: 100%;
-  width: 5rem;
+  width: 3rem;
 `;
 
 const StyledCartSVG = styled(IoIosCart)`
   height: 80%;
-  width: 2rem;
+  width: 2.5rem;
   display: inline-block;
   position: relative;
 `;
